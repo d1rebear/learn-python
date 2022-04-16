@@ -86,6 +86,7 @@ unique_citizens.add(ilya2)
 unique_citizens.add(ilya1)
 unique_citizens.add(ilya3)
 unique_citizens.add(petr)
+unique_citizens.add(petr)
 
 print(unique_citizens)
 
