@@ -19,7 +19,7 @@ for line_index, line in enumerate(inp):
         if num.isdigit():
             numbers.append(int(num))
         else:
-            exit(f'Файл содержит посторонние символы в {line_index + 1} строке ')
+            exit(f'Файл содержит посторонние символы в {line_index + 1} строке (not int) : "{num}"')
     numbers_count = len(numbers)
     if numbers_count < 1 or numbers_count > 10:
         exit(f'Количество чисел ({numbers_count}) в строке #{line_index + 1} вне разрешенного диапазона [1-10]')
@@ -60,7 +60,6 @@ min_sum_index = line_sums_list.index(min_sum_num) + 1
 print(f'Наибольшая сумма в строке # {max_sum_index}: {max_sum_num}')
 print(f'Наименьшая сумма в строке # {min_sum_index}: {min_sum_num}')
 
-#replace_comma = inp.read().replace(",", "")
 for line_index, sublist in enumerate(numberlists_list):
     odd_num_list = []
     even_num_list = []
@@ -87,7 +86,6 @@ for line_index, sublist in enumerate(numberlists_list):
         else:
             digits = int(math.log10(-n)) + 2
             digits_list.append(int(digits))
-    #x = sublist.replace()
     numbers_count = len(sublist)
     length_even_num = len(even_num_list)
     length_odd_num = len(odd_num_list)
