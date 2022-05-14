@@ -2,11 +2,17 @@ import os
 import math
 
 file_path = 'input.txt'
-if not os.path.isfile('input.txt'):
-    exit("Файл input.txt не находится в директории")
+if not os.path.isfile(file_path):
+    exit(f"Файл {file_path} не найден")
+try:
+    open(file_path)
+except Exception as error:
+    e1 = error
+    exit(e1)
 if os.stat(file_path).st_size == 0:
     exit('Файл пуст')
-inp = open("input.txt", "r")
+
+inp = open(file_path, "r")
 
 numberlists_list = []
 line_num_counts = []
@@ -16,7 +22,7 @@ for line_index, line in enumerate(inp):
         exit(f'Строка #{line_index + 1} пуста')
     numbers = []
     for num in line.split(","):
-        if num.isdigit():
+        if num.isdecimal():
             numbers.append(int(num))
         else:
             exit(f'Файл содержит посторонние символы в {line_index + 1} строке (not int) : "{num}"')
@@ -26,7 +32,6 @@ for line_index, line in enumerate(inp):
     numberlists_list.append(numbers)
     line_num_counts.append(numbers_count)
 print(f'\nКоличество строк: {len(numberlists_list)}')
-
 
 longest_line_num_count = line_num_counts[0]
 longest_line_index = 0
@@ -49,6 +54,7 @@ max_sum_index = 0
 min_sum_index = 0
 max_sum_num = line_sums_list[0]
 min_sum_num = line_sums_list[0]
+
 # строка с наибольшей и наименьшей суммой чисел
 for line_num_sum in line_sums_list:
     if line_num_sum > max_sum_num:
