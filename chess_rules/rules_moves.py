@@ -30,24 +30,24 @@ def chess_bishop(move, position, move_position_diff):
     if move_position_diff % 9 == 0 or move_position_diff % 11 == 0:
         if (position == 555 and move == 591) or (position == 565 and move == 601) or (
                 position == 575 and move == 611):
-            print(f'The "Queen" cannot move!')
+            print(f'The "Bishop" cannot move!')
             return False
         elif (position == 585 and move == 621) or (position == 595 and move == 631) or (
                 position == 556 and move == 592):
-            print(f'The "Queen" cannot move!')
+            print(f'The "Bishop" cannot move!')
             return False
         elif (position == 566 and move == 602) or (position == 576 and move == 612) or (
                 position == 586 and move == 622):
-            print(f'The "Queen" cannot move!')
+            print(f'The "Bishop" cannot move!')
             return False
         elif position == 596 and move == 632:
-            print(f'The "Queen" cannot move!')
+            print(f'The "Bishop" cannot move!')
             return False
         else:
-            print(f'The "Queen" has a move')
+            print(f'The "Bishop" has a move')
             return True
     else:
-        print(f'The "Queen" cannot move!')
+        print(f'The "Bishop" cannot move!')
         return False
 
 
