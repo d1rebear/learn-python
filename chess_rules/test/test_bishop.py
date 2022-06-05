@@ -26,6 +26,7 @@ testdata_invalid = [
     ('BISHOP', '11', 'AA'),
 ]
 
+
 class TestBishop:
     @staticmethod
     @pytest.mark.parametrize("figure_name, start_position, end_position",
